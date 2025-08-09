@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>ParisaHome Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  
+  <style>
+    :root{
+      --ph-bg: #faf7f2;           /* warm linen */
+      --ph-card: #ffffff;
+      --ph-text: #2b2b2b;
+      --ph-muted: #6b7280;
+      --ph-accent: #cba35b;       /* gold accent */
+      --ph-accent-2: #8b6b2b;     /* darker gold for hover */
+      --ph-border: #efebe4;
+      --ph-link: #3b82f6;
+      --ph-success: #0ea5e9;      /* soft blue for CTAs */
+    }
+    html, body{ background:var(--ph-bg); color:var(--ph-text); }
+    .navbar{ background:var(--ph-card); border-bottom:1px solid var(--ph-border); }
+    .navbar .nav-link, .navbar-brand{ color:var(--ph-text); }
+    a, .nav-link:hover{ color: var(--ph-accent-2); }
+    .card{ background:var(--ph-card); border:1px solid var(--ph-border); border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,.04); }
+    .btn-primary{ background:var(--ph-accent); border-color:var(--ph-accent); }
+    .btn-primary:hover{ background:var(--ph-accent-2); border-color:var(--ph-accent-2); }
+    .btn-outline-light{ color:var(--ph-text); border-color:var(--ph-border); }
+    .btn-outline-light:hover{ background:#fff; border-color:var(--ph-accent); color:var(--ph-accent-2); }
+    .table{ --bs-table-color: var(--ph-text); --bs-table-bg: var(--ph-card); --bs-table-striped-bg: #f8f5ef; }
+    .badge{ font-size:.85rem; border-radius:999px; }
+    .status-new{ background:#e5e7eb; color:#111827; }
+    .status-in_progress{ background:#fde68a; color:#92400e; }
+    .status-done{ background:#d1fae5; color:#065f46; }
+    .muted{ color:var(--ph-muted); }
+    .ph-topbar{ backdrop-filter:saturate(180%) blur(6px); }
+  </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg mb-4">
+  <div class="container">
+    <a class="navbar-brand text-light" href="/admin">ParisaHome Admin</a>
+    <div>
+      <a class="nav-link d-inline" href="/admin/complaints">Заявки</a>
+      <a class="nav-link d-inline" href="/admin/users">Пользователи</a>
+      <a class="nav-link d-inline" href="/admin/blocked">Блокировки</a>
+    </div>
+  </div>
+</nav>
+<main class="container">
+  {% block content %}{% endblock %}
+</main>
+</body>
+</html>

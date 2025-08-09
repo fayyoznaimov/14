@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row g-3">
+  <div class="col-md-2"><div class="card p-3"><div class="muted">Всего</div><div class="h4">{{ stats.total }}</div></div></div>
+  <div class="col-md-2"><div class="card p-3"><div class="muted">Сегодня</div><div class="h4">{{ stats.today }}</div></div></div>
+  <div class="col-md-2"><div class="card p-3"><div class="muted">7 дней</div><div class="h4">{{ stats.week }}</div></div></div>
+  <div class="col-md-2"><div class="card p-3"><div class="muted">30 дней</div><div class="h4">{{ stats.month }}</div></div></div>
+  <div class="col-md-2"><div class="card p-3"><div class="muted">Жалоб</div><div class="h4">{{ stats.complaints }}</div></div></div>
+  <div class="col-md-2"><div class="card p-3"><div class="muted">Предлож.</div><div class="h4">{{ stats.suggestions }}</div></div></div>
+</div>
+<div class="mt-4">
+  <a href="/admin/complaints" class="btn btn-primary">Перейти к заявкам</a>
+</div>
+{% endblock %}
